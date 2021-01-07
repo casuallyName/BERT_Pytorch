@@ -153,7 +153,7 @@ class BERT_Multi_Label_Classification(object):
         input_ids_list = []
         for text in tqdm(text_list, ncols=0, desc='Encode'):
             input_ids = self.__tokenizer.encode(
-                text[:self._max_length - 2],
+                str(text)[:self._max_length - 2],
                 add_special_tokens=True,  # 添加special tokens， 也就是CLS和SEP
                 max_length=self._max_length,  # 设定最大文本长度
                 padding='max_length',
@@ -409,7 +409,7 @@ class BERT_Multi_Class_Classification(object):
         input_ids_list = []
         for text in tqdm(text_list, ncols=0, desc='Encode'):
             input_ids = self.__tokenizer.encode(
-                text[:self._max_length - 2],
+                str(text)[:self._max_length - 2],
                 add_special_tokens=True,  # 添加special tokens， 也就是CLS和SEP
                 max_length=self._max_length,  # 设定最大文本长度
                 padding='max_length',
